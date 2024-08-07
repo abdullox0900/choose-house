@@ -1,37 +1,37 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import { Button, Dropdown, Menu } from 'antd';
-import { GlobalOutlined } from '@ant-design/icons';
-import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react'
+import { Button, Dropdown, Menu } from 'antd'
+import { GlobalOutlined } from '@ant-design/icons'
+import { usePathname, useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 interface LanguageOption {
-    key: string;
-    label: string;
+    key: string
+    label: string
 }
 
 const languageOptions: LanguageOption[] = [
     { key: 'uz', label: "O'zbek" },
     { key: 'ru', label: 'Русский' },
     { key: 'kr', label: 'Ўзбекча' },
-];
+]
 
 const LocalSwitcher: React.FC = () => {
-    const pathname = usePathname();
-    const router = useRouter();
-    const [selectedLang, setSelectedLang] = useState<string>('uz');
+    const pathname = usePathname()
+    const router = useRouter()
+    const [selectedLang, setSelectedLang] = useState<string>('uz')
 
     useEffect(() => {
-        const currentLang = pathname.split('/')[1];
+        const currentLang = pathname.split('/')[1]
         if (languageOptions.some(option => option.key === currentLang)) {
-            setSelectedLang(currentLang);
+            setSelectedLang(currentLang)
         }
-    }, [pathname]);
+    }, [pathname])
 
     const handleLanguageChange = (lang: string) => {
-        const newPathname = '/' + lang + pathname.substring(3);
-        router.push(newPathname);
-    };
+        const newPathname = '/' + lang + pathname.substring(3)
+        router.push(newPathname)
+    }
 
     const menu = (
         <Menu>
@@ -41,7 +41,7 @@ const LocalSwitcher: React.FC = () => {
                 </Menu.Item>
             ))}
         </Menu>
-    );
+    )
 
     return (
         <Dropdown overlay={menu} trigger={['click']}>
@@ -56,10 +56,10 @@ const LocalSwitcher: React.FC = () => {
                 }}
             >
                 <GlobalOutlined style={{ color: 'white', fontSize: '18px', marginRight: '4px' }} />
-                <span style={{ color: 'white', fontWeight: 'bold' }}>{selectedLang.toUpperCase()}</span>
+                <span style={{ color: 'white', fontWeight: 'bold' }}>{selectedLang.toUpperCase() == 'KR' ? 'ЎЗ' : selectedLang.toUpperCase()}</span>
             </Button>
         </Dropdown>
-    );
-};
+    )
+}
 
-export default LocalSwitcher;
+export default LocalSwitcher

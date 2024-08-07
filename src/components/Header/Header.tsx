@@ -35,8 +35,8 @@ const Header: React.FC = () => {
   }, [isMenuOpen])
 
   return (
-    <header ref={headerRef} className="fixed left-1/2 -translate-x-1/2 top-5 w-[95%] rounded-[10px] bg-blue-500 p-4 overflow-hidden transition-all duration-300 ease-in-out">
-      <div className="container mx-auto">
+    <header ref={headerRef} className=" container fixed left-1/2 -translate-x-1/2 top-5 w-full rounded-[10px] bg-blue-500 p-4 overflow-hidden transition-all duration-300 ease-in-out z-10">
+      <div className=" mx-auto">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-white text-2xl font-bold">
             <Image className='max-mobile-m:w-[110px]' src={SiteLogo} alt='site-logo' />
