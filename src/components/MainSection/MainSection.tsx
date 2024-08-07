@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-export const MainSection = () => {
+interface Children {
+  children: ReactNode
+}
+
+export const MainSection = (props: Children) => {
   return (
-    <div>MainSection</div>
+    <main className='px-[20px]'>
+      {props.children}
+    </main>
   )
 }
