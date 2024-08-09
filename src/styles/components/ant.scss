@@ -1,0 +1,11 @@
+.ant-select-selector {
+	border-radius: 10px !important;
+}
+
+.ant-slider-track {
+	@apply bg-blue_10 !important;
+}
+
+.ant-slider-handle::after {
+	box-shadow: 0 0 0 2px #3889f2 !important;
+}

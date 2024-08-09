@@ -6,8 +6,8 @@ interface Children {
 
 export const MainSection = (props: Children) => {
   return (
-    <main className='px-[20px]'>
+    <div className='px-[20px]'>
       {props.children}
-    </main>
+    </div>
   )
 }

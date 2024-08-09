@@ -14,15 +14,41 @@ const config: Config = {
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			colors: {
-				primary: '#FF0000',
-				secondary: '#00FF00',
-				accent: '#0000FF',
+				blue_10: '#3889F2',
 			},
 			screens: {
 				'max-tablet': { raw: '(max-width: 1024px)' },
 				'max-tablet-m': { raw: '(max-width: 765px)' },
 				'max-mobile-l': { raw: '(max-width: 425px)' },
 				'max-mobile-m': { raw: '(max-width: 375px)' },
+			},
+			borderRadius: {
+				sm: '5px',
+				md: '10px',
+				'md-2': '15px',
+				// 'xl': '1rem',
+				// '2xl': '2rem',
+				// '3xl': '3rem',
+				// 'full': '9999px',
+			},
+			keyframes: {
+				'bounce-slow': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20%)' },
+				},
+			},
+			animation: {
+				'bounce-slow': 'bounce-slow 3s ease-in-out infinite',
+			},
+			variants: {
+				extend: {
+					backgroundColor: ['hover', 'active'],
+					textColor: ['hover', 'active'],
+					borderColor: ['hover', 'active', 'focus'],
+					ringColor: ['hover', 'active', 'focus'],
+					ringOpacity: ['hover', 'active', 'focus'],
+					animation: ['hover', 'group-hover'],
+				},
 			},
 		},
 	},

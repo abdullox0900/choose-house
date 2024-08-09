@@ -1,9 +1,10 @@
 import React from 'react'
+import Container from '../Container/Container'
 
 const Hero: React.FC = () => {
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-lg">
+    <Container>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-lg mb-[50px]">
         <div className="hero-col-one relative md:col-span-2 bg-red-500 md:h-[405px] h-[405px] rounded-[10px] max-mobile-l:h-[300px]">
           <div className='absolute right-[0px] bottom-[0px] w-[180px] h-[180px] bg-white rounded-full max-mobile-l:hidden'>
             <div className='absolute top-[15px] right-[15px] w-[150px] h-[150px] bg-blue-500 rounded-full max-mobile-l:hidden'></div>
@@ -19,7 +20,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 
